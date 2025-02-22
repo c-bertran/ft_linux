@@ -8,7 +8,7 @@ fi
 # Init
 apt update
 apt upgrade -y
-apt install -y build-essential bison gawk m4 texinfo curl
+apt install -y build-essential bison gawk m4 texinfo curl wget fdisk
 rm -rf /bin/sh
 ln -s /usr/bin/bash /bin/sh
 
@@ -61,7 +61,12 @@ swapon /dev/sda3
 # Get packages
 mkdir -v $LFS/sources
 chmod -v a+wt $LFS/sources
+
+# Make three times
 wget --input-file=wget-list-systemd --continue --directory-prefix=$LFS/sources
+wget --input-file=wget-list-systemd --continue --directory-prefix=$LFS/sources
+wget --input-file=wget-list-systemd --continue --directory-prefix=$LFS/sources
+
 chown root:root $LFS/sources/*
 
 # Prepare lfs structure

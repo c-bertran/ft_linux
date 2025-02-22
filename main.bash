@@ -6,13 +6,13 @@ sudo -i bash < ./scripts/1.bash
 echo '>>>>>>' 'LFS edition' '<<<<<<'
 echo If needed, for lfs password is lfs
 sudo -i -u lfs bash < ./scripts/2.bash
-echo '>>>>>>' 'ROOT edition' '<<<<<<'
-sudo -i bash < ./scripts/3.bash
-sudo -i bash < ./scripts/4.bash
-sudo -i bash << EOF
-chmod 755 /etc/sudoers
-echo "lfs      ALL=(ALL:ALL) ALL" >> /etc/sudoers
-EOF
+#echo '>>>>>>' 'ROOT edition' '<<<<<<'
+#sudo -i bash < ./scripts/3.bash
+#sudo -i bash < ./scripts/4.bash
+#sudo -i bash << EOF
+#chmod 755 /etc/sudoers
+#echo "lfs      ALL=(ALL:ALL) ALL" >> /etc/sudoers
+#EOF
 echo '>>>>>>' 'Dependencies installation' '<<<<<<'
 sudo -u lfs bash ./scripts/install/main.bash
 
