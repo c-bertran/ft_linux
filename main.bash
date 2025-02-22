@@ -8,12 +8,16 @@ echo If needed, for lfs password is lfs
 sudo -i -u lfs bash < ./scripts/2.bash
 #echo '>>>>>>' 'ROOT edition' '<<<<<<'
 #sudo -i bash < ./scripts/3.bash
-#sudo -i bash < ./scripts/4.bash
+#sudo -i bash < ./scripts/4.bashln -s /usr/bin/bash /bin/sh
 #sudo -i bash << EOF
 #chmod 755 /etc/sudoers
 #echo "lfs      ALL=(ALL:ALL) ALL" >> /etc/sudoers
 #EOF
 echo '>>>>>>' 'Dependencies installation' '<<<<<<'
+sudo -i bash << EOF
+cp -r ./scripts/install /mnt/lfs/sources
+chown -R lfs:lfs /mnt/lfs/sources/
+EOF
 sudo -u lfs bash ./scripts/install/main.bash
 
 echo '>>>>>>' 'Tools' '<<<<<<'
