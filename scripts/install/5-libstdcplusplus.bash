@@ -11,8 +11,9 @@ cd build
     --disable-multilib              \
     --disable-nls                   \
     --disable-libstdcxx-pch         \
-    --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/13.2.0
+    --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/14.2.0
 make -j$(nproc)
 make DESTDIR=$LFS install
+rm -v $LFS/usr/lib/lib{stdc++{,exp,fs},supc++}.la
 cd ../../
 rm -rf gcc

@@ -9,5 +9,6 @@ cd xz
             --docdir=/usr/share/doc/xz-5.4.6
 make -j$(nproc)
 make DESTDIR=$LFS install
+rm -v $LFS/usr/lib/liblzma.la
 cd ..
 rm -rf xz

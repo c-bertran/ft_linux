@@ -10,7 +10,7 @@ case $(uname -m) in
             ln -sfv ../lib/ld-linux-x86-64.so.2 $LFS/lib64/ld-lsb-x86-64.so.3
     ;;
 esac
-patch -Np1 -i ../glibc-2.39-fhs-1.patch
+patch -Np1 -i ../glibc-2.40-fhs-1.patch
 mkdir -v build
 cd build
 echo "rootsbindir=/usr/sbin" > configparms
@@ -18,8 +18,9 @@ echo "rootsbindir=/usr/sbin" > configparms
       --prefix=/usr                      \
       --host=$LFS_TGT                    \
       --build=$(../scripts/config.guess) \
-      --enable-kernel=3.2                \
+      --enable-kernel=4.19               \
       --with-headers=$LFS/usr/include    \
+      --disable-nscd                     \
       libc_cv_slibdir=/usr/lib
 make -j$(nproc)
 make DESTDIR=$LFS install

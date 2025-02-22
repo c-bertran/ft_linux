@@ -15,13 +15,15 @@ popd
             --mandir=/usr/share/man      \
             --with-manpage-format=normal \
             --with-shared                \
+            --without-normal             \
+            --with-cxx-shared            \
             --without-debug              \
             --without-ada                \
-            --without-normal             \
-            --disable-stripping          \
-            --enable-widec
+            --disable-stripping
 make -j$(nproc)
 make DESTDIR=$LFS TIC_PATH=$(pwd)/build/progs/tic install
-echo "INPUT(-lncursesw)" > $LFS/usr/lib/libncurses.so
+ln -sv libncursesw.so $LFS/usr/lib/libncurses.so
+sed -e 's/^#if.*XOPEN.*$/#if 1/' \
+    -i $LFS/usr/include/curses.h
 cd ..
 rm -rf ncurses

@@ -3,7 +3,8 @@
 tar -xvf sed-4.*.tar.xz -C sed
 cd sed
 ./configure --prefix=/usr   \
-            --host=$LFS_TGT
+            --host=$LFS_TGT \
+            --build=$(./build-aux/config.guess)
 make -j$(nproc)
 make DESTDIR=$LFS install
 cd ..

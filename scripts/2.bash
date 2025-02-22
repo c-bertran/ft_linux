@@ -17,7 +17,12 @@ CONFIG_SITE=$LFS/usr/share/config.site
 export LFS LC_ALL LFS_TGT PATH CONFIG_SITE
 EOF
 
+cat >> ~/.bashrc << "EOF"
+export MAKEFLAGS=-j$(nproc)
+EOF
+
+export MAKEFLAGS='-j$(nproc)'
+
 source ~/.bash_profile
-export MAKEFLAGS='-j4'
 
 exec <&-

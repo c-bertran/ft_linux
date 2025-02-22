@@ -13,7 +13,7 @@ rm -rf /bin/sh
 ln -s /usr/bin/bash /bin/sh
 
 # Partitioning
-fdisk /dev/sdb << EOF
+fdisk /dev/sda << EOF
 g
 n
 
@@ -45,26 +45,27 @@ EOF
 
 # mkfs
 echo "MKFS & LFS"
-mkfs -v -t ext2 /dev/sdb2
-mkfs -v -t ext4 /dev/sdb4
-mkswap /dev/sdb3
-lsblk -o NAME,UUID,FSTYPE,MOUNTPOINT,SIZE /dev/sdb
+mkfs -v -t ext2 /dev/sda2
+mkfs -v -t ext4 /dev/sda4
+mkswap /dev/sda3
+lsblk -o NAME,UUID,FSTYPE,MOUNTPOINT,SIZE /dev/sda
 
 # Start real work
-mkdir -v $LFS
-mount -v -t ext4 /dev/sdb4 $LFS
+mkdir -pv $LFS
+mount -v -t ext4 /dev/sda4 $LFS
 
-swapoff /dev/sdb3 
-mkswap /dev/sdb3
-swapon /dev/sdb3
+swapoff /dev/sda3 
+mkswap /dev/sda3
+swapon /dev/sda3
 
 # Get packages
 mkdir -v $LFS/sources
 chmod -v a+wt $LFS/sources
 wget --input-file=wget-list-systemd --continue --directory-prefix=$LFS/sources
+chown root:root $LFS/sources/*
 
 # Prepare lfs structure
-mkdir -v $LFS/tools
+mkdir -pv $LFS/tools
 ln -sv $LFS/tools /
 
 mkdir -pv $LFS/{etc,var} $LFS/usr/{bin,lib,sbin}
@@ -79,7 +80,7 @@ esac
 
 groupadd lfs
 useradd -s /bin/bash -g lfs -m -k /dev/null lfs
-printf 'toor\ntoor\n' | passwd lfs
+printf 'lfs\nlfs\n' | passwd lfs
 
 chown -v lfs $LFS/tools
 chown -v lfs $LFS/sources

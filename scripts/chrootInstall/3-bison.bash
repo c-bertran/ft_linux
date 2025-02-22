@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar -xvf bison-3.8.2.tar.xz -C bison
+tar -xvf bison-*.tar.xz -C bison
 cd bison
 ./configure --prefix=/usr \
             --docdir=/usr/share/doc/bison-3.8.2

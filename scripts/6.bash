@@ -32,7 +32,7 @@ bin:x:1:1:bin:/dev/null:/usr/bin/false
 daemon:x:6:6:Daemon User:/dev/null:/usr/bin/false
 messagebus:x:18:18:D-Bus Message Daemon User:/run/dbus:/usr/bin/false
 uuidd:x:80:80:UUID Generation Daemon User:/dev/null:/usr/bin/false
-nobody:x:99:99:Unprivileged User:/dev/null:/usr/bin/false
+nobody:x:65534:65534:Unprivileged User:/dev/null:/usr/bin/false
 EOF
 
 cat > /etc/group << "EOF"
@@ -50,7 +50,6 @@ dialout:x:10:
 audio:x:11:
 video:x:12:
 utmp:x:13:
-usb:x:14:
 cdrom:x:15:
 adm:x:16:
 messagebus:x:18:
@@ -59,24 +58,14 @@ mail:x:34:
 kvm:x:61:
 uuidd:x:80:
 wheel:x:97:
-nogroup:x:99:
 users:x:999:
+nogroup:x:65534:
 EOF
+
+localedef -i C -f UTF-8 C.UTF-8
 
 echo "tester:x:101:101::/home/tester:/bin/bash" >> /etc/passwd
 echo "tester:x:101:" >> /etc/group
 install -o tester -d /home/tester
 
 exec /usr/bin/bash --login
-
-touch /var/log/{btmp,lastlog,faillog,wtmp}
-chgrp -v utmp /var/log/lastlog
-chmod -v 664  /var/log/lastlog
-chmod -v 600  /var/log/btmp
-
-# Deps
-bash < ./chrootInstall/main.bash
-
-rm -rf /usr/share/{info,man,doc}/*
-find /usr/{lib,libexec} -name \*.la -delete
-rm -rf /tools

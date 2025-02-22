@@ -1,7 +1,7 @@
 #!/bin/bash
 
 for file in `ls -1 $(dirname $0) | sort -n`; do
-    if [ "$file" = "main.bash" ]; then
+    if [ "$file" = "main.bash" || "$file" = "1-gcc.bash" ]; then
         continue
     fi
     echo Install $file
