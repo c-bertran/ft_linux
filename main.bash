@@ -22,7 +22,7 @@ cd $LFS/sources
 EOF
 
 echo '>>>>>>' 'Tools' '<<<<<<'
-sudo -i bash < ./scripts/5.bash
+sudo LFS=$LFS bash ./scripts/5.bash
 
 sudo chroot "$LFS" /usr/bin/env -i   \
     HOME=/root                  \
