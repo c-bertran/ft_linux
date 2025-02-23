@@ -22,7 +22,8 @@ cd $LFS/sources
 EOF
 
 echo '>>>>>>' 'Tools' '<<<<<<'
-sudo find /path/to/specified/dir -mindepth 1 -type d -exec rm -r {} +
+sudo find $LFS/sources -mindepth 1 -type d -exec rm -r {} +
+sudo rm -rf $LFS/sources/*.bash
 sudo cp -r ./scripts/chrootInstall/* $LFS/sources
 sudo chown -R lfs:lfs $LFS/sources/*.bash
 sudo LFS=$LFS bash ./scripts/5.bash
