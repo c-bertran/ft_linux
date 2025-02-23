@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir mpfr
-tar xvf mpfr-*.tar.xz -C mpfr  --strip-components=1
+tar xf mpfr-*.tar.xz -C mpfr  --strip-components=1
 cd mpfr
 ./configure --prefix=/usr        \
             --disable-static     \

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir findutils
-tar xvf findutils-*.tar.xz -C findutils  --strip-components=1
+tar xf findutils-*.tar.xz -C findutils  --strip-components=1
 cd findutils
 ./configure --prefix=/usr --localstatedir=/var/lib/locate
 make -j$(nproc)

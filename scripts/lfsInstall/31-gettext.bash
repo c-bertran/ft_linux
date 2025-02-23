@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir gettext
-tar xvf gettext-*.tar.xz -C gettext  --strip-components=1
+tar xf gettext-*.tar.xz -C gettext  --strip-components=1
 cd gettext
 ./configure --prefix=/usr    \
             --disable-static \

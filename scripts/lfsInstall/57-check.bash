@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir check
-tar xvf check-*.tar.gz -C check  --strip-components=1
+tar xf check-*.tar.gz -C check  --strip-components=1
 cd check
 ./configure --prefix=/usr --disable-static
 make -j$(nproc)

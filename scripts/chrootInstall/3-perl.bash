@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir perl
-tar -xvf perl-5.*.tar.xz -C perl  --strip-components=1
+tar xf perl-5.*.tar.xz -C perl  --strip-components=1
 cd perl
 sh Configure -des                                         \
              -D prefix=/usr                               \

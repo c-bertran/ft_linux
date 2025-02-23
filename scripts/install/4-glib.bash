@@ -1,8 +1,8 @@
 #!/bin/bash
 
-mkdir glibc-2.39
-tar xf glibc-2.39.tar.xz -C glibc-2.39  --strip-components=1
-cd glibc-2.39
+mkdir glibc
+tar xf glibc-*.tar.xz -C glibc  --strip-components=1
+cd glibc
 
 case $(uname -m) in
     i?86)   ln -sfv ld-linux.so.2 $LFS/lib/ld-lsb.so.3
@@ -23,7 +23,7 @@ echo "rootsbindir=/usr/sbin" > configparms
       --with-headers=$LFS/usr/include    \
       --disable-nscd                     \
       libc_cv_slibdir=/usr/lib
-make -j$(nproc)
+make -j1
 make DESTDIR=$LFS install
 sed '/RTLDLIST=/s@/usr@@g' -i $LFS/usr/bin/ldd
 echo 'int main(){}' > dummy.c
@@ -34,9 +34,8 @@ then
     echo "gcc: error: cannot find the start of the dynamic linker" >&2
     exit 1
 fi
-readelf -l a.out | grep '/ld-linux'
+readelf -l a.out | grep ld-linux
 rm -v dummy.c a.out
-$LFS/tools/libexec/gcc/$LFS_TGT/11.2.0/install-tools/mkheaders
-cd ../..
 
-rm -rf glibc-2.39
+cd ../..
+rm -rf glibc

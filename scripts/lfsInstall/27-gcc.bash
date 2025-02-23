@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir gcc
-tar xvf gcc-*.tar.xz -C gcc  --strip-components=1
+tar xf gcc-*.tar.xz -C gcc  --strip-components=1
 cd gcc
 
 case $(uname -m) in

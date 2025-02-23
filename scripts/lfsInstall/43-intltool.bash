@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir intltool
-tar xvf intltool-*.tar.gz -C intltool  --strip-components=1
+tar xf intltool-*.tar.gz -C intltool  --strip-components=1
 cd intltool
 sed -i 's:\\\${:\\\$\\{:' intltool-update.in
 ./configure --prefix=/usr

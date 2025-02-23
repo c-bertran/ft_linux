@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir flex
-tar xvf flex-*.tar.gz -C flex  --strip-components=1
+tar xf flex-*.tar.gz -C flex  --strip-components=1
 cd flex
 ./configure --prefix=/usr \
             --docdir=/usr/share/doc/flex-2.6.4 \

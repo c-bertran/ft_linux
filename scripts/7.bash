@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir linux
-tar -xvf linux-*.tar.xz -C linux  --strip-components=1
+tar xf linux-*.tar.xz -C linux  --strip-components=1
 cd linux
 make mrproper
 make menuconfig

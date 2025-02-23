@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir coreutils
-tar xvf coreutils-*.tar.xz -C coreutils  --strip-components=1
+tar xf coreutils-*.tar.xz -C coreutils  --strip-components=1
 cd coreutils
 patch -Np1 -i ../coreutils-9.5-i18n-2.patch
 autoreconf -fiv

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 mkdir grep
-tar -xvf grep-*.tar.xz -C grep  --strip-components=1
-cd grep-3.7
+tar xf grep-*.tar.xz -C grep  --strip-components=1
+cd grep
 ./configure --prefix=/usr   \
             --host=$LFS_TGT \
             --build=$(./build-aux/config.guess)

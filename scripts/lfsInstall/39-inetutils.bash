@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir inetutils
-tar xvf inetutils-*.tar.xz -C inetutils  --strip-components=1
+tar xf inetutils-*.tar.xz -C inetutils  --strip-components=1
 cd inetutils
 sed -i 's/def HAVE_TERMCAP_TGETENT/ 1/' telnet/telnet.c
 ./configure --prefix=/usr        \

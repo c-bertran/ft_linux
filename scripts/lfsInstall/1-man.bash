@@ -2,7 +2,7 @@
 
 rm -v man3/crypt*
 mkdir man-pages
-tar xvf man-pages-*.tar.xz -C man-pages  --strip-components=1
+tar xf man-pages-*.tar.xz -C man-pages  --strip-components=1
 cd man-pages
 make prefix=/usr install
 cd ..

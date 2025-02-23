@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir gdbm
-tar xvf gdbm-*.tar.gz -C gdbm  --strip-components=1
+tar xf gdbm-*.tar.gz -C gdbm  --strip-components=1
 cd gdbm
 ./configure --prefix=/usr    \
             --disable-static \

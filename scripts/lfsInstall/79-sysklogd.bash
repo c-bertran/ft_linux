@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir sysklogd
-tar xvf sysklogd-*.tar.gz -C sysklogd  --strip-components=1
+tar xf sysklogd-*.tar.gz -C sysklogd  --strip-components=1
 cd sysklogd
 ./configure --prefix=/usr      \
             --sysconfdir=/etc  \

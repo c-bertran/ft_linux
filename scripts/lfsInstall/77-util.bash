@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir util-linux
-tar xvf util-linux-*.tar.xz -C util-linux  --strip-components=1
+tar xf util-linux-*.tar.xz -C util-linux  --strip-components=1
 cd util-linux
 ./configure --bindir=/usr/bin     \
             --libdir=/usr/lib     \

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir kmod
-tar xvf kmod-*.tar.xz -C kmod  --strip-components=1
+tar xf kmod-*.tar.xz -C kmod  --strip-components=1
 cd kmod
 ./configure --prefix=/usr     \
             --sysconfdir=/etc \

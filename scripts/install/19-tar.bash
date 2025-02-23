@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir tar
-tar -xvf tar-*.tar.xz -C tar  --strip-components=1
+tar xf tar-*.tar.xz -C tar  --strip-components=1
 cd tar
 ./configure --prefix=/usr                     \
             --host=$LFS_TGT                   \

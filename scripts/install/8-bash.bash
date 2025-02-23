@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir bash
-tar -xvf bash-*.tar.gz -C bash  --strip-components=1
+tar xf bash-*.tar.gz -C bash  --strip-components=1
 cd bash
 ./configure --prefix=/usr                      \
             --build=$(sh support/config.guess) \
@@ -13,4 +13,3 @@ make DESTDIR=$LFS install
 ln -sv bash $LFS/bin/sh
 cd ..
 rm -rf bash
-

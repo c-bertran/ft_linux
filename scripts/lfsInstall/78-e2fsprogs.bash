@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir e2fsprogs
-tar xvf e2fsprogs-*.tar.gz -C e2fsprogs  --strip-components=1
+tar xf e2fsprogs-*.tar.gz -C e2fsprogs  --strip-components=1
 cd e2fsprogs
 mkdir -v build
 cd build

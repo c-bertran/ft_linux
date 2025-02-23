@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir elfutils
-tar xvf elfutils-*.tar.bz2 -C elfutils  --strip-components=1
+tar xf elfutils-*.tar.bz2 -C elfutils  --strip-components=1
 cd elfutils
 ./configure --prefix=/usr                \
             --disable-debuginfod         \

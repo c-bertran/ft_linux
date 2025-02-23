@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir pkgconf
-tar xvf pkgconf-*.tar.gz -C pkgconf  --strip-components=1
+tar xf pkgconf-*.tar.gz -C pkgconf  --strip-components=1
 cd pkgconf
 ./configure --prefix=/usr              \
             --disable-static           \

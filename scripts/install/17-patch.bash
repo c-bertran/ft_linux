@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir patch
-tar -xvf patch-2.*.tar.xz -C patch  --strip-components=1
+tar xf patch-2.*.tar.xz -C patch  --strip-components=1
 cd patch
 ./configure --prefix=/usr   \
             --host=$LFS_TGT \

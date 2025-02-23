@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir vim
-tar xvf vim-*.tar.gz -C vim  --strip-components=1
+tar xf vim-*.tar.gz -C vim  --strip-components=1
 cd vim
 echo '#define SYS_VIMRC_FILE "/etc/vimrc"' >> src/feature.h
 ./configure --prefix=/usr

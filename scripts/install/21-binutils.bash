@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir binutils
-tar -xvf binutils-2.*.tar.xz -C binutils  --strip-components=1
+tar xf binutils-2.*.tar.xz -C binutils  --strip-components=1
 cd binutils
 sed '6009s/$add_dir//' -i ltmain.sh
 mkdir -v build

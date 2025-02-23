@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir libcap
-tar xvf libcap-*.tar.xz -C libcap  --strip-components=1
+tar xf libcap-*.tar.xz -C libcap  --strip-components=1
 cd libcap
 sed -i '/install -m.*STA/d' libcap/Makefile
 make prefix=/usr lib=lib

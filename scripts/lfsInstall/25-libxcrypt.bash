@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir libxcrypt
-tar xvf libxcrypt-*.tar.xz -C libxcrypt  --strip-components=1
+tar xf libxcrypt-*.tar.xz -C libxcrypt  --strip-components=1
 cd libxcrypt
 ./configure --prefix=/usr                \
             --enable-hashes=strong,glibc \

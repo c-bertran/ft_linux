@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir diffutils
-tar xvf diffutils-*.tar.xz -C diffutils  --strip-components=1
+tar xf diffutils-*.tar.xz -C diffutils  --strip-components=1
 cd diffutils
 ./configure --prefix=/usr
 make -j$(nproc)

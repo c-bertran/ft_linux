@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir autoconf
-tar xvf autoconf-*.tar.xz -C autoconf  --strip-components=1
+tar xf autoconf-*.tar.xz -C autoconf  --strip-components=1
 cd autoconf
 ./configure --prefix=/usr
 make -j$(nproc)
