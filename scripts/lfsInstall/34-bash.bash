@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf bash-*.tar.gz -C bash
+tar xvf bash-*.tar.gz --one-top-level=bash
 cd bash
 ./configure --prefix=/usr             \
             --without-bash-malloc     \

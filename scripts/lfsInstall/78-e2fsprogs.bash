@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf e2fsprogs-*.tar.gz -C e2fsprogs
+tar xvf e2fsprogs-*.tar.gz --one-top-level=e2fsprogs
 cd e2fsprogs
 mkdir -v build
 cd build

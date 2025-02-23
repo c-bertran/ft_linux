@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf perl-*.tar.gz -C perl
+tar xvf perl-*.tar.gz --one-top-level=perl
 cd perl
 export BUILD_ZLIB=False
 export BUILD_BZIP2=0

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf groff-*.tar.gz -C groff
+tar xvf groff-*.tar.gz --one-top-level=groff
 cd groff
 PAGE=A4 ./configure --prefix=/usr
 make -j$(nproc)

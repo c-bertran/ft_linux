@@ -1,10 +1,10 @@
 #!/bin/bash
 
-tar xvf gcc-*.tar.xz -C gcc
+tar xvf gcc-*.tar.xz --one-top-level=gcc
 cd gcc
-tar -xf ../mpfr-*.tar.xz -C mpfr
-tar -xf ../gmp-*.tar.xz -C gmp
-tar -xf ../mpc-*.tar.gz -C mpc
+tar -xf ../mpfr-*.tar.xz --one-top-level=mpfr
+tar -xf ../gmp-*.tar.xz --one-top-level=gmp
+tar -xf ../mpc-*.tar.gz --one-top-level=mpc
 
 case $(uname -m) in
   x86_64)

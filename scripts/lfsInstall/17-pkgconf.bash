@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf pkgconf-*.tar.gz -C pkgconf
+tar xvf pkgconf-*.tar.gz --one-top-level=pkgconf
 cd pkgconf
 ./configure --prefix=/usr              \
             --disable-static           \

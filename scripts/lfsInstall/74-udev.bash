@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf udev-*.tar.gz -C udev
+tar xvf udev-*.tar.gz --one-top-level=udev
 cd udev
 
 sed -i -e 's/GROUP="render"/GROUP="video"/' \

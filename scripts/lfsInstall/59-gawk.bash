@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf gawk-*.tar.xz -C gawk
+tar xvf gawk-*.tar.xz --one-top-level=gawk
 cd gawk
 sed -i 's/extras//' Makefile.in
 ./configure --prefix=/usr

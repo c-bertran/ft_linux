@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf acl-*.tar.xz -C acl
+tar xvf acl-*.tar.xz --one-top-level=acl
 cd acl
 ./configure --prefix=/usr         \
             --disable-static      \

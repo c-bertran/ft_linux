@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf shadow-*.tar.xz -C shadow
+tar xvf shadow-*.tar.xz --one-top-level=shadow
 cd shadow
 sed -i 's/groups$(EXEEXT) //' src/Makefile.in
 find man -name Makefile.in -exec sed -i 's/groups\.1 / /'   {} \;

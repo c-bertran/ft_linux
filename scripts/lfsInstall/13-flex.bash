@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf flex-*.tar.gz -C flex
+tar xvf flex-*.tar.gz --one-top-level=flex
 cd flex
 ./configure --prefix=/usr \
             --docdir=/usr/share/doc/flex-2.6.4 \

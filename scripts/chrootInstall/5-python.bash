@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar -xvf Python-*.tar.xz -C python
+tar -xvf Python-*.tar.xz --one-top-level=python
 cd python
 ./configure --prefix=/usr   \
             --enable-shared \

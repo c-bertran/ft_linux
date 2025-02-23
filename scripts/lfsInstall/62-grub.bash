@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf grub-*.tar.xz -C grub
+tar xvf grub-*.tar.xz --one-top-level=grub
 cd grub
 unset {C,CPP,CXX,LD}FLAGS
 echo depends bli part_gpt > grub-core/extra_deps.lst

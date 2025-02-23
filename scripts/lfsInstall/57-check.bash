@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf check-*.tar.gz -C check
+tar xvf check-*.tar.gz --one-top-level=check
 cd check
 ./configure --prefix=/usr --disable-static
 make -j$(nproc)

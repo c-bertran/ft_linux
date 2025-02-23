@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf tcl8.6.14-src.tar.gz -C tcl
+tar xvf tcl8.6.14-src.tar.gz --one-top-level=tcl
 cd tcl
 SRCDIR=$(pwd)
 cd unix

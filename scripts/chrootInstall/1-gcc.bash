@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf gcc-*.tar.xz -C gcc
+tar xvf gcc-*.tar.xz --one-top-level=gcc
 cd gcc
 ln -s gthr-posix.h libgcc/gthr-default.h
 mkdir -v build

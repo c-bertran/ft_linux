@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar -xvf sed-4.*.tar.xz -C sed
+tar -xvf sed-4.*.tar.xz --one-top-level=sed
 cd sed
 ./configure --prefix=/usr   \
             --host=$LFS_TGT \

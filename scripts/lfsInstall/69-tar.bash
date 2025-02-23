@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf tar-*.tar.xz -C tar
+tar xvf tar-*.tar.xz --one-top-level=tar
 cd tar
 FORCE_UNSAFE_CONFIGURE=1  \
 ./configure --prefix=/usr

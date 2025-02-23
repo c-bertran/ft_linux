@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf autoconf-*.tar.xz -C autoconf
+tar xvf autoconf-*.tar.xz --one-top-level=autoconf
 cd autoconf
 ./configure --prefix=/usr
 make -j$(nproc)

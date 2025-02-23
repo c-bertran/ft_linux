@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf sysklogd-*.tar.gz -C sysklogd
+tar xvf sysklogd-*.tar.gz --one-top-level=sysklogd
 cd sysklogd
 ./configure --prefix=/usr      \
             --sysconfdir=/etc  \

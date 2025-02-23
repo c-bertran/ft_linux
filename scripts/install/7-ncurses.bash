@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar -xvf ncurses-6.*.tar.gz -C ncurses
+tar -xvf ncurses-6.*.tar.gz --one-top-level=ncurses
 cd ncurses
 sed -i s/mawk// configure
 mkdir build

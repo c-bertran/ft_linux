@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf man-db-*.tar.xz -C man-db
+tar xvf man-db-*.tar.xz --one-top-level=man-db
 cd man-db
 ./configure --prefix=/usr                         \
             --docdir=/usr/share/doc/man-db-2.12.1 \

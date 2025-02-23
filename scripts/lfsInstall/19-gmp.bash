@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf gmp-*.tar.xz -C gmp
+tar xvf gmp-*.tar.xz --one-top-level=gmp
 cd gmp
 ./configure --prefix=/usr    \
             --enable-cxx     \

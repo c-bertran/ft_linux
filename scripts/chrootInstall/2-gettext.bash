@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar -xvf gettext-*.tar.xz -C gettext
+tar -xvf gettext-*.tar.xz --one-top-level=gettext
 cd gettext
 ./configure --disable-shared
 make -j$(nproc)

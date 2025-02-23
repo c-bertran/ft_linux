@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf findutils-*.tar.xz -C findutils
+tar xvf findutils-*.tar.xz --one-top-level=findutils
 cd findutils
 ./configure --prefix=/usr --localstatedir=/var/lib/locate
 make -j$(nproc)

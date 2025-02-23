@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf expect5.45.4.tar.gz -C expect
+tar xvf expect5.45.4.tar.gz --one-top-level=expect
 cd expect
 patch -Np1 -i ../expect-5.45.4-gcc14-1.patch
 ./configure --prefix=/usr           \

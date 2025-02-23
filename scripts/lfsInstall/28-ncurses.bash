@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf ncurses-*.tar.gz -C ncurses
+tar xvf ncurses-*.tar.gz --one-top-level=ncurses
 cd ncurses
 ./configure --prefix=/usr           \
             --mandir=/usr/share/man \

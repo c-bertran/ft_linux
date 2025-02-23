@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf attr-*.tar.gz -C attr
+tar xvf attr-*.tar.gz --one-top-level=attr
 cd attr
 ./configure --prefix=/usr     \
             --disable-static  \

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf elfutils-*.tar.bz2 -C elfutils
+tar xvf elfutils-*.tar.bz2 --one-top-level=elfutils
 cd elfutils
 ./configure --prefix=/usr                \
             --disable-debuginfod         \

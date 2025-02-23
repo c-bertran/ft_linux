@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf zstd-*.tar.gz -C zstd
+tar xvf zstd-*.tar.gz --one-top-level=zstd
 cd zstd
 make check
 make prefix=/usr install

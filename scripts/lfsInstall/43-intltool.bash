@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf intltool-*.tar.gz -C intltool
+tar xvf intltool-*.tar.gz --one-top-level=intltool
 cd intltool
 sed -i 's:\\\${:\\\$\\{:' intltool-update.in
 ./configure --prefix=/usr

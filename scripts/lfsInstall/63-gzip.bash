@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf gzip-*.tar.xz -C gzip
+tar xvf gzip-*.tar.xz --one-top-level=gzip
 cd gzip
 ./configure --prefix=/usr
 make -j$(nproc)

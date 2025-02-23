@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar -xvf binutils-2.*.tar.xz -C binutils
+tar -xvf binutils-2.*.tar.xz --one-top-level=binutils
 cd binutils
 sed '6009s/$add_dir//' -i ltmain.sh
 mkdir -v build

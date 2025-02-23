@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar -xvf patch-2.*.tar.xz -C patch
+tar -xvf patch-2.*.tar.xz --one-top-level=patch
 cd patch
 ./configure --prefix=/usr   \
             --host=$LFS_TGT \

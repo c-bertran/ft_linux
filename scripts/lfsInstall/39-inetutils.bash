@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf inetutils-*.tar.xz -C inetutils
+tar xvf inetutils-*.tar.xz --one-top-level=inetutils
 cd inetutils
 sed -i 's/def HAVE_TERMCAP_TGETENT/ 1/' telnet/telnet.c
 ./configure --prefix=/usr        \

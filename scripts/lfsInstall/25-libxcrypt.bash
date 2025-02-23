@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf libxcrypt-*.tar.xz -C libxcrypt
+tar xvf libxcrypt-*.tar.xz --one-top-level=libxcrypt
 cd libxcrypt
 ./configure --prefix=/usr                \
             --enable-hashes=strong,glibc \

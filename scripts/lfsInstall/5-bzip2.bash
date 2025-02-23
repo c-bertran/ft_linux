@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf bzip2-*.tar.gz -C bzip2
+tar xvf bzip2-*.tar.gz --one-top-level=bzip2
 cd bzip2
 
 patch -Np1 -i ../bzip2-1.0.8-install_docs-1.patch

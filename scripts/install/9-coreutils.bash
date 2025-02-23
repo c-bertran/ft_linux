@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar -xvf coreutils-*tar.xz -C coreutils
+tar -xvf coreutils-*tar.xz --one-top-level=coreutils
 cd coreutils
 ./configure --prefix=/usr                     \
             --host=$LFS_TGT                   \

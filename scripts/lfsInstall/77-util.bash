@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf util-linux-*.tar.xz -C util-linux
+tar xvf util-linux-*.tar.xz --one-top-level=util-linux
 cd util-linux
 ./configure --bindir=/usr/bin     \
             --libdir=/usr/lib     \

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf psmisc-*.tar.xz -C psmisc
+tar xvf psmisc-*.tar.xz --one-top-level=psmisc
 cd psmisc
 ./configure --prefix=/usr
 make -j$(nproc)

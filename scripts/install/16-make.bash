@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar -xvf make-4.*.tar.gz -C make
+tar -xvf make-4.*.tar.gz --one-top-level=make
 cd make
 ./configure --prefix=/usr   \
             --without-guile \

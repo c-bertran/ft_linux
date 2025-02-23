@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar -xvf file-*.tar.gz -C file
+tar -xvf file-*.tar.gz --one-top-level=file
 cd file
 mkdir build
 pushd build

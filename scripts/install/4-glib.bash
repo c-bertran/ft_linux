@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xf glibc-2.39.tar.xz
+tar xf glibc-2.39.tar.xz --one-top-level=glibc-2.39
 cd glibc-2.39
 
 case $(uname -m) in

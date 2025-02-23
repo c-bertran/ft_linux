@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf openssl-*.tar.gz -C openssl
+tar xvf openssl-*.tar.gz --one-top-level=openssl
 cd openssl
 ./config --prefix=/usr         \
          --openssldir=/etc/ssl \

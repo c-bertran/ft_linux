@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar -xvf tar-*.tar.xz -C tar
+tar -xvf tar-*.tar.xz --one-top-level=tar
 cd tar
 ./configure --prefix=/usr                     \
             --host=$LFS_TGT                   \

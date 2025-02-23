@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf meson-*.tar.gz -C meson
+tar xvf meson-*.tar.gz --one-top-level=meson
 cd meson
 pip3 wheel -w dist --no-cache-dir --no-build-isolation --no-deps $PWD
 pip3 install --no-index --find-links dist meson

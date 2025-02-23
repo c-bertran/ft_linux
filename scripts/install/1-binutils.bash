@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf binutils-*.tar.xz -C binutils
+tar xvf binutils-*.tar.xz --one-top-level=binutils
 cd binutils
 mkdir -v build
 cd build

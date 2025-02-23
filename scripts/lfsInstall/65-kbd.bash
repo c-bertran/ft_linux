@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf kbd-*.tar.xz -C kbd
+tar xvf kbd-*.tar.xz --one-top-level=kbd
 cd kbd
 patch -Np1 -i ../kbd-2.6.4-backspace-1.patch
 sed -i '/RESIZECONS_PROGS=/s/yes/no/' configure

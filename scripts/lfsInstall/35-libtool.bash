@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tar xvf libtool-*.tar.xz -C libtool
+tar xvf libtool-*.tar.xz --one-top-level=libtool
 cd libtool
 ./configure --prefix=/usr
 make
