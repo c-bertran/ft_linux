@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar -xvf perl-5.*.tar.xz --one-top-level=perl
+mkdir perl
+tar -xvf perl-5.*.tar.xz -C perl  --strip-components=1
 cd perl
 sh Configure -des                                         \
              -D prefix=/usr                               \

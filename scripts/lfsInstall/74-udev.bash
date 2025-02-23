@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar xvf udev-*.tar.gz --one-top-level=udev
+mkdir udev
+tar xvf udev-*.tar.gz -C udev  --strip-components=1
 cd udev
 
 sed -i -e 's/GROUP="render"/GROUP="video"/' \

@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar xvf ninja-*.tar.gz --one-top-level=ninja
+mkdir ninja
+tar xvf ninja-*.tar.gz -C ninja  --strip-components=1
 cd ninja
 export NINJAJOBS=4
 sed -i '/int Guess/a \

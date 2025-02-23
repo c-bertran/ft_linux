@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar xvf less-*.tar.gz --one-top-level=less
+mkdir less
+tar xvf less-*.tar.gz -C less  --strip-components=1
 cd less
 ./configure --prefix=/usr --sysconfdir=/etc
 make -j$(nproc)

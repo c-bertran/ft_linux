@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar xvf bc-*.tar.xz --one-top-level=bc
+mkdir bc
+tar xvf bc-*.tar.xz -C bc  --strip-components=1
 cd bc
 CC=gcc ./configure --prefix=/usr -G -O3 -r
 make -j$(nproc)

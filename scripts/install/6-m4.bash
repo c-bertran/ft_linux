@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar -xvf m4-1.4.*.tar.xz --one-top-level=m4
+mkdir m4
+tar -xvf m4-1.4.*.tar.xz -C m4  --strip-components=1
 cd m4
 ./configure --prefix=/usr   \
             --host=$LFS_TGT \

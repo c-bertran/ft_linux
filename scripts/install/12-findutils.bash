@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar -xvf findutils-4.*.tar.xz --one-top-level=findutils
+mkdir findutils
+tar -xvf findutils-4.*.tar.xz -C findutils  --strip-components=1
 cd findutils
 ./configure --prefix=/usr                   \
             --localstatedir=/var/lib/locate \

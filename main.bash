@@ -22,7 +22,7 @@ sudo -u lfs bash ./scripts/install/main.bash
 
 echo '>>>>>>' 'Tools' '<<<<<<'
 sudo -i bash < ./scripts/5.bash
-sudo cchroot "$LFS" /usr/bin/env -i   \
+sudo chroot "$LFS" /usr/bin/env -i   \
     HOME=/root                  \
     TERM="$TERM"                \
     PS1='(lfs chroot) \u:\w\$ ' \

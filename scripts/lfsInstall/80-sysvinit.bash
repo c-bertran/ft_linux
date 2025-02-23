@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar xvf sysvinit-*.tar.xz --one-top-level=sysvinit
+mkdir sysvinit
+tar xvf sysvinit-*.tar.xz -C sysvinit  --strip-components=1
 cd sysvinit
 patch -Np1 -i ../sysvinit-3.10-consolidated-1.patch
 make -j$(nproc)

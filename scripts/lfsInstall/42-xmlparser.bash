@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar xvf XML-Parser-*.tar.gz --one-top-level=XML-Parser
+mkdir XML-Parser
+tar xvf XML-Parser-*.tar.gz -C XML-Parser  --strip-components=1
 cd XML-Parser
 perl Makefile.PL
 make -j$(nproc)

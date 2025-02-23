@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar xvf dejagnu-*.tar.gz --one-top-level=dejagnu
+mkdir dejagnu
+tar xvf dejagnu-*.tar.gz -C dejagnu  --strip-components=1
 cd dejagnu
 mkdir -v build
 cd       build

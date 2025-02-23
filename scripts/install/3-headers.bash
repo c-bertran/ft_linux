@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar -xf linux-5.16.9.tar.xz --one-top-level=linux
+mkdir linux
+tar -xf linux-5.16.9.tar.xz -C linux  --strip-components=1
 cd linux
 make mrproper
 make headers

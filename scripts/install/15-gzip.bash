@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar -xvf gzip-1.*.tar.xz --one-top-level=gzip
+mkdir gzip
+tar -xvf gzip-1.*.tar.xz -C gzip  --strip-components=1
 cd gzip
 ./configure --prefix=/usr --host=$LFS_TGT
 make -j$(nproc)

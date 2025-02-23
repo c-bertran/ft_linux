@@ -5,12 +5,19 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
+export LFS=/mnt/lfs
 # Init
 apt update
 apt upgrade -y
 apt install -y build-essential bison gawk m4 texinfo curl wget fdisk
+
+# Shell to bash
 rm -rf /bin/sh
 ln -s /usr/bin/bash /bin/sh
+
+# Awk to Gwak
+rm -rf /usr/bin/awk
+ln -s /usr/bin/gawk /usr/bin/awk
 
 # Partitioning
 fdisk /dev/sda << EOF

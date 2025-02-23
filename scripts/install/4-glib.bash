@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar xf glibc-2.39.tar.xz --one-top-level=glibc-2.39
+mkdir glibc-2.39
+tar xf glibc-2.39.tar.xz -C glibc-2.39  --strip-components=1
 cd glibc-2.39
 
 case $(uname -m) in

@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar xvf mpc-*.tar.xz --one-top-level=mpc
+mkdir mpc
+tar xvf mpc-*.tar.xz -C mpc  --strip-components=1
 cd mpc
 ./configure --prefix=/usr    \
             --disable-static \

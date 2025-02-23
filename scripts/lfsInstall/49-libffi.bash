@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar xvf libffi-*.tar.gz --one-top-level=libffi
+mkdir libffi
+tar xvf libffi-*.tar.gz -C libffi  --strip-components=1
 cd libffi
 ./configure --prefix=/usr          \
             --disable-static       \

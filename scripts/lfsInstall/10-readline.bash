@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar xvf readline-*.tar.gz --one-top-level=readline
+mkdir readline
+tar xvf readline-*.tar.gz -C readline  --strip-components=1
 cd readline
 sed -i '/MV.*old/d' Makefile.in
 sed -i '/{OLDSUFF}/c:' support/shlib-install

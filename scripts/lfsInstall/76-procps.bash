@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar xvf procps-ng-*.tar.xz --one-top-level=procps-ng
+mkdir procps-ng
+tar xvf procps-ng-*.tar.xz -C procps-ng  --strip-components=1
 cd procps-ng
 ./configure --prefix=/usr                           \
             --docdir=/usr/share/doc/procps-ng-4.0.4 \

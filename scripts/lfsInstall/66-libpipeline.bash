@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar xvf libpipeline-*.tar.gz --one-top-level=libpipeline
+mkdir libpipeline
+tar xvf libpipeline-*.tar.gz -C libpipeline  --strip-components=1
 cd libpipeline
 ./configure --prefix=/usr
 make -j$(nproc)

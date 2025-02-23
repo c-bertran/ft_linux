@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar -xvf util-linux-22.39.3.tar.xz --one-top-level=utilLinux
+mkdir utilLinux
+tar -xvf util-linux-22.39.3.tar.xz -C utilLinux  --strip-components=1
 cd utilLinux
 mkdir -pv /var/lib/hwclock
 ./configure --libdir=/usr/lib     \

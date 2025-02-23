@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar -xvf xz-5.4.6.tar.xz --one-top-level=xz
+mkdir xz
+tar -xvf xz-5.4.6.tar.xz -C xz  --strip-components=1
 cd xz
 ./configure --prefix=/usr                     \
             --host=$LFS_TGT                   \

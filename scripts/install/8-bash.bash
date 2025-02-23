@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar -xvf bash-*.tar.gz --one-top-level=bash
+mkdir bash
+tar -xvf bash-*.tar.gz -C bash  --strip-components=1
 cd bash
 ./configure --prefix=/usr                      \
             --build=$(sh support/config.guess) \

@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar xvf iproute2-*.tar.xz --one-top-level=iproute2
+mkdir iproute2
+tar xvf iproute2-*.tar.xz -C iproute2  --strip-components=1
 cd iproute2
 sed -i /ARPD/d Makefile
 rm -fv man/man8/arpd.8

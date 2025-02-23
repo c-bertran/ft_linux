@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar xvf gperf-*.tar.gz --one-top-level=gperf
+mkdir gperf
+tar xvf gperf-*.tar.gz -C gperf  --strip-components=1
 cd gperf
 ./configure --prefix=/usr --docdir=/usr/share/doc/gperf-3.1
 make -j$(nproc)

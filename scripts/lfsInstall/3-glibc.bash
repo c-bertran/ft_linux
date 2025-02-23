@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar xvf glibc-*.tar.xz --one-top-level=glibc
+mkdir glibc
+tar xvf glibc-*.tar.xz -C glibc  --strip-components=1
 cd glibc
 patch -Np1 -i ../glibc-2.40-fhs-1.patch
 mkdir -v build

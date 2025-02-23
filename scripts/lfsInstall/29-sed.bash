@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar xvf sed-*.tar.xz --one-top-level=sed
+mkdir sed
+tar xvf sed-*.tar.xz -C sed  --strip-components=1
 cd sed
 ./configure --prefix=/usr
 make

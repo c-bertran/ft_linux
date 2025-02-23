@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar xvf xz-*.tar.xz --one-top-level=xz
+mkdir xz
+tar xvf xz-*.tar.xz -C xz  --strip-components=1
 cd xz
 ./configure --prefix=/usr    \
             --disable-static \

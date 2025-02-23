@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar -xvf linux-*.tar.xz --one-top-level=linux
+mkdir linux
+tar -xvf linux-*.tar.xz -C linux  --strip-components=1
 cd linux
 make mrproper
 make menuconfig

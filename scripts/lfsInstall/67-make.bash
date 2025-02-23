@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar xvf make-*.tar.gz --one-top-level=make
+mkdir make
+tar xvf make-*.tar.gz -C make  --strip-components=1
 cd make
 ./configure --prefix=/usr
 make -j$(nproc)

@@ -1,9 +1,13 @@
 #!/bin/bash
 
-tar xvf gcc-*.tar.xz --one-top-level=gcc
-tar -xf ../mpfr-*.tar.xz --one-top-level=mpfr
-tar -xf ../gmp-*.tar.xz --one-top-level=gmp
-tar -xf ../mpc-*.tar.gz --one-top-level=mpc
+mkdir gcc
+tar -xf gcc-*.tar.xz -C gcc  --strip-components=1
+mkdir mpfr
+tar -xf ../mpfr-*.tar.xz -C mpfr  --strip-components=1
+mkdir gmp
+tar -xf ../gmp-*.tar.xz -C gmp  --strip-components=1
+mkdir mpc
+tar -xf ../mpc-*.tar.gz -C mpc  --strip-components=1
 
 cd gcc
 

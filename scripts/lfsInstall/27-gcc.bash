@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar xvf gcc-*.tar.xz --one-top-level=gcc
+mkdir gcc
+tar xvf gcc-*.tar.xz -C gcc  --strip-components=1
 cd gcc
 
 case $(uname -m) in

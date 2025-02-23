@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar xvf binutils-*.tar.xz --one-top-level=binutils
+mkdir binutils
+tar -xf binutils-*.tar.xz -C binutils  --strip-components=1
 cd binutils
 mkdir -v build
 cd build

@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tar xvf expat-*.tar.xz --one-top-level=expat
+mkdir expat
+tar xvf expat-*.tar.xz -C expat  --strip-components=1
 cd expat
 ./configure --prefix=/usr    \
             --disable-static \

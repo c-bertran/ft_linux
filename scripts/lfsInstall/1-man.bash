@@ -1,7 +1,8 @@
 #!/bin/bash
 
 rm -v man3/crypt*
-tar xvf man-pages-*.tar.xz --one-top-level=man-pages
+mkdir man-pages
+tar xvf man-pages-*.tar.xz -C man-pages  --strip-components=1
 cd man-pages
 make prefix=/usr install
 cd ..
