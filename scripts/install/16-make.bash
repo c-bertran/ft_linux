@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir make
-tar -xvf make-4.*.tar.gz -C make  --strip-components=1
+tar xf make-4.*.tar.gz -C make  --strip-components=1
 cd make
 ./configure --prefix=/usr   \
             --without-guile \

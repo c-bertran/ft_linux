@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir grep
-tar xvf grep-*.tar.xz -C grep  --strip-components=1
+tar xf grep-*.tar.xz -C grep  --strip-components=1
 cd grep
 sed -i "s/echo/#echo/" src/egrep.sh
 ./configure --prefix=/usr

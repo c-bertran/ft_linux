@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir gzip
-tar xvf gzip-*.tar.xz -C gzip  --strip-components=1
+tar xf gzip-*.tar.xz -C gzip  --strip-components=1
 cd gzip
 ./configure --prefix=/usr
 make -j$(nproc)

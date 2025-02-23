@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir coreutils
-tar -xvf coreutils-*tar.xz -C coreutils  --strip-components=1
+tar xf coreutils-*tar.xz -C coreutils  --strip-components=1
 cd coreutils
 ./configure --prefix=/usr                     \
             --host=$LFS_TGT                   \

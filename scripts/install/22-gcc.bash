@@ -1,13 +1,13 @@
 #!/bin/bash
 
+rm -rf gcc
 mkdir gcc
-tar xvf gcc-*.tar.xz -C gcc  --strip-components=1
+tar xf gcc-*.tar.xz -C gcc  --strip-components=1
+
 cd gcc
-mkdir mpfr
+mkdir mpfr gmp mpc
 tar -xf ../mpfr-*.tar.xz -C mpfr  --strip-components=1
-mkdir gmp
 tar -xf ../gmp-*.tar.xz -C gmp  --strip-components=1
-mkdir mpc
 tar -xf ../mpc-*.tar.gz -C mpc  --strip-components=1
 
 case $(uname -m) in

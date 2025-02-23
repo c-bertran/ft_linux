@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir xz
-tar xvf xz-*.tar.xz -C xz  --strip-components=1
+tar xf xz-*.tar.xz -C xz  --strip-components=1
 cd xz
 ./configure --prefix=/usr    \
             --disable-static \

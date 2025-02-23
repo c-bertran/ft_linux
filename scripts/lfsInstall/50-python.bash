@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir Python
-tar xvf Python-*.tar.xz -C Python  --strip-components=1
+tar xf Python-*.tar.xz -C Python  --strip-components=1
 cd Python
 ./configure --prefix=/usr        \
             --enable-shared      \
@@ -17,7 +17,7 @@ EOF
 
 install -v -dm755 /usr/share/doc/python-3.12.5/html
 
-tar --no-same-owner -xvf ../python-3.12.5-docs-html.tar.bz2
+tar --no-same-owner xf ../python-3.12.5-docs-html.tar.bz2
 cp -R --no-preserve=mode python-3.12.5-docs-html/* /usr/share/doc/python-3.12.5/html
 
 cd ..

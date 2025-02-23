@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir patch
-tar xvf patch-*.tar.xz -C patch  --strip-components=1
+tar xf patch-*.tar.xz -C patch  --strip-components=1
 cd patch
 ./configure --prefix=/usr
 make -j$(nproc)

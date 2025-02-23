@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir texinfo
-tar xvf texinfo-*.tar.xz -C texinfo  --strip-components=1
+tar xf texinfo-*.tar.xz -C texinfo  --strip-components=1
 cd texinfo
 ./configure --prefix=/usr
 make -j$(nproc)

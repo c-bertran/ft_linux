@@ -1,7 +1,8 @@
 #!/bin/bash
 
+rm -rf gcc
 mkdir gcc
-tar xvf gcc-*.tar.xz -C gcc  --strip-components=1
+tar xf gcc-*.tar.xz -C gcc  --strip-components=1
 cd gcc
 mkdir -v build
 cd build

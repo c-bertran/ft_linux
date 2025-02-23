@@ -14,14 +14,16 @@ sudo -i -u lfs bash < ./scripts/2.bash
 #echo "lfs      ALL=(ALL:ALL) ALL" >> /etc/sudoers
 #EOF
 echo '>>>>>>' 'Dependencies installation' '<<<<<<'
-sudo -i bash << EOF
-cp -r ./scripts/install /mnt/lfs/sources
-chown -R lfs:lfs /mnt/lfs/sources/
+sudo cp -r ./scripts/install/* /mnt/lfs/sources
+sudo chown -R lfs:lfs /mnt/lfs/sources/*.bash
+sudo -u lfs << EOF
+cd $LFS/sources
+./main.bash
 EOF
-sudo -u lfs bash ./scripts/install/main.bash
 
 echo '>>>>>>' 'Tools' '<<<<<<'
 sudo -i bash < ./scripts/5.bash
+
 sudo chroot "$LFS" /usr/bin/env -i   \
     HOME=/root                  \
     TERM="$TERM"                \

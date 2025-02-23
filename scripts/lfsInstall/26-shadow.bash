@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir shadow
-tar xvf shadow-*.tar.xz -C shadow  --strip-components=1
+tar xf shadow-*.tar.xz -C shadow  --strip-components=1
 cd shadow
 sed -i 's/groups$(EXEEXT) //' src/Makefile.in
 find man -name Makefile.in -exec sed -i 's/groups\.1 / /'   {} \;

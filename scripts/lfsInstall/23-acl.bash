@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir acl
-tar xvf acl-*.tar.xz -C acl  --strip-components=1
+tar xf acl-*.tar.xz -C acl  --strip-components=1
 cd acl
 ./configure --prefix=/usr         \
             --disable-static      \

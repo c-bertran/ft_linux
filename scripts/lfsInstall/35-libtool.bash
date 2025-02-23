@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir libtool
-tar xvf libtool-*.tar.xz -C libtool  --strip-components=1
+tar xf libtool-*.tar.xz -C libtool  --strip-components=1
 cd libtool
 ./configure --prefix=/usr
 make

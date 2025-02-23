@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir perl
-tar xvf perl-*.tar.gz -C perl  --strip-components=1
+tar xf perl-*.tar.gz -C perl  --strip-components=1
 cd perl
 export BUILD_ZLIB=False
 export BUILD_BZIP2=0

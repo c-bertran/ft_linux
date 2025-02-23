@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir expat
-tar xvf expat-*.tar.xz -C expat  --strip-components=1
+tar xf expat-*.tar.xz -C expat  --strip-components=1
 cd expat
 ./configure --prefix=/usr    \
             --disable-static \

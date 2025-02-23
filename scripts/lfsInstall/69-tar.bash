@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir tar
-tar xvf tar-*.tar.xz -C tar  --strip-components=1
+tar xf tar-*.tar.xz -C tar  --strip-components=1
 cd tar
 FORCE_UNSAFE_CONFIGURE=1  \
 ./configure --prefix=/usr

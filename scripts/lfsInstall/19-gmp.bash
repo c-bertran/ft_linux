@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir gmp
-tar xvf gmp-*.tar.xz -C gmp  --strip-components=1
+tar xf gmp-*.tar.xz -C gmp  --strip-components=1
 cd gmp
 ./configure --prefix=/usr    \
             --enable-cxx     \

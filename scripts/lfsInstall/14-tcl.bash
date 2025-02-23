@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir tcl
-tar xvf tcl8.6.14-src.tar.gz -C tcl  --strip-components=1
+tar xf tcl8.6.14-src.tar.gz -C tcl  --strip-components=1
 cd tcl
 SRCDIR=$(pwd)
 cd unix
