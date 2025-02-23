@@ -22,10 +22,10 @@ cd $LFS/sources
 EOF
 
 echo '>>>>>>' 'Tools' '<<<<<<'
-sudo -i bash < ./scripts/5.bash
 sudo find /path/to/specified/dir -mindepth 1 -type d -exec rm -r {} +
 sudo cp -r ./scripts/chrootInstall/* $LFS/sources
 sudo chown -R lfs:lfs $LFS/sources/*.bash
+sudo LFS=$LFS bash ./scripts/5.bash
 
 sudo chroot "$LFS" /usr/bin/env -i   \
     HOME=/root                  \
