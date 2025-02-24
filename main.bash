@@ -45,7 +45,7 @@ sudo chroot "$LFS" /usr/bin/env -i   \
     TESTSUITEFLAGS="-j$(nproc)" \
     /bin/bash --login < ./scripts/6.1.bash
 
-echo '>>>>>>' 'Kernel' '<<<<<<'
+echo '>>>>>>' 'LFS install' '<<<<<<'
 sudo find $LFS/sources -mindepth 1 -type d -exec rm -rf {} +
 sudo rm -rf $LFS/sources/*.bash
 sudo cp -r ./scripts/lfsInstall/* $LFS/sources
@@ -54,12 +54,52 @@ sudo chroot "$LFS" /usr/bin/env -i   \
     TERM="$TERM"                \
     PS1='(lfs chroot) \u:\w\$ ' \
     PATH=/usr/bin:/usr/sbin     \
+    /bin/bash --login < ./scripts/6.2.bash
+
+echo '>>>>>>' 'Clean dumps' '<<<<<<'
+sudo chroot "$LFS" /usr/bin/env -i   \
+    HOME=/root                  \
+    TERM="$TERM"                \
+    PS1='(lfs chroot) \u:\w\$ ' \
+    PATH=/usr/bin:/usr/sbin     \
     /bin/bash --login < ./scripts/7.bash
 
-echo '>>>>>>' 'Bootloader' '<<<<<<'
+echo '>>>>>>' 'System configuration' '<<<<<<'
 sudo chroot "$LFS" /usr/bin/env -i   \
     HOME=/root                  \
     TERM="$TERM"                \
     PS1='(lfs chroot) \u:\w\$ ' \
     PATH=/usr/bin:/usr/sbin     \
     /bin/bash --login < ./scripts/8.bash
+sudo chroot "$LFS" /usr/bin/env -i   \
+    HOME=/root                  \
+    TERM="$TERM"                \
+    PS1='(lfs chroot) \u:\w\$ ' \
+    PATH=/usr/bin:/usr/sbin     \
+    /bin/bash --login < ./scripts/9.bash
+
+echo '>>>>>>' 'Make LFS bootable' '<<<<<<'
+sudo chroot "$LFS" /usr/bin/env -i   \
+    HOME=/root                  \
+    TERM="$TERM"                \
+    PS1='(lfs chroot) \u:\w\$ ' \
+    PATH=/usr/bin:/usr/sbin     \
+    /bin/bash --login < ./scripts/10.bash
+
+echo '>>>>>>' 'Customization' '<<<<<<'
+sudo chroot "$LFS" /usr/bin/env -i   \
+    HOME=/root                  \
+    TERM="$TERM"                \
+    PS1='(lfs chroot) \u:\w\$ ' \
+    PATH=/usr/bin:/usr/sbin     \
+    /bin/bash --login < ./scripts/11.bash
+
+umount -v $LFS/dev/pts
+mountpoint -q $LFS/dev/shm && umount -v $LFS/dev/shm
+umount -v $LFS/dev
+umount -v $LFS/run
+umount -v $LFS/proc
+umount -v $LFS/sys
+umount -v $LFS
+
+shutdown -r now
