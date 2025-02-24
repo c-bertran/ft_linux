@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir udev
-tar xf udev-*.tar.gz -C udev  --strip-components=1
+tar xf systemd-*.tar.gz -C udev  --strip-components=1
 cd udev
 
 sed -i -e 's/GROUP="render"/GROUP="video"/' \

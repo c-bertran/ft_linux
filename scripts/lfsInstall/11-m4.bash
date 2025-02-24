@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir m4
-tar xf m4-*.tar.gz -C m4  --strip-components=1
+tar xf m4-*.tar.xz -C m4  --strip-components=1
 cd m4
 ./configure --prefix=/usr
 make -j$(nproc)
