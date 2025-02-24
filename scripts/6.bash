@@ -67,17 +67,3 @@ localedef -i C -f UTF-8 C.UTF-8
 echo "tester:x:101:101::/home/tester:/bin/bash" >> /etc/passwd
 echo "tester:x:101:" >> /etc/group
 install -o tester -d /home/tester
-
-(
-    /usr/bin/bash --login
-    touch /var/log/{btmp,lastlog,faillog,wtmp}
-    chgrp -v utmp /var/log/lastlog
-    chmod -v 664  /var/log/lastlog
-    chmod -v 600  /var/log/btmp
-    cd $LFS/sources
-    ./main.bash
-    rm -rf /usr/share/{info,man,doc}/*
-    find /usr/{lib,libexec} -name \*.la -delete
-    rm -rf /tools
-    echo "Stop here if you want to save it"
-)
