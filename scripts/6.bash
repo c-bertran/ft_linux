@@ -62,6 +62,7 @@ users:x:999:
 nogroup:x:65534:
 EOF
 
+mkdir -pv /usr/lib/locale/
 localedef -i C -f UTF-8 C.UTF-8
 
 echo "tester:x:101:101::/home/tester:/bin/bash" >> /etc/passwd

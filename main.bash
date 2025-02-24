@@ -25,7 +25,7 @@ echo '>>>>>>' 'Tools' '<<<<<<'
 sudo find $LFS/sources -mindepth 1 -type d -exec rm -r {} +
 sudo rm -rf $LFS/sources/*.bash
 sudo cp -r ./scripts/chrootInstall/* $LFS/sources
-sudo chown -R lfs:lfs $LFS/sources/*.bash
+#sudo chown -R lfs:lfs $LFS/sources/*.bash
 sudo LFS=$LFS bash ./scripts/5.bash
 
 sudo chroot "$LFS" /usr/bin/env -i   \
@@ -46,6 +46,9 @@ sudo chroot "$LFS" /usr/bin/env -i   \
     /bin/bash --login < ./scripts/6.1.bash
 
 echo '>>>>>>' 'Kernel' '<<<<<<'
+sudo find $LFS/sources -mindepth 1 -type d -exec rm -rf {} +
+sudo rm -rf $LFS/sources/*.bash
+sudo cp -r ./scripts/lfsInstall/* $LFS/sources
 sudo chroot "$LFS" /usr/bin/env -i   \
     HOME=/root                  \
     TERM="$TERM"                \
