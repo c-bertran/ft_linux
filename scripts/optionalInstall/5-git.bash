@@ -1,13 +1,14 @@
 #!/bin/bash
 
 mkdir git
-tar xf git-*.tar.xz -C git --strip-components=1
+tar xf git-2.*.tar.xz -C git --strip-components=1
 cd git
 
 ./configure --prefix=/usr \
             --with-gitconfig=/etc/gitconfig \
             --with-python=python3
 make
+make perllibdir=/usr/lib/perl5/5.40/site_perl install
 tar -xf ../git-manpages-2.46.0.tar.xz \
     -C /usr/share/man --no-same-owner --no-overwrite-dir
 mkdir -vp   /usr/share/doc/git-2.46.0 &&

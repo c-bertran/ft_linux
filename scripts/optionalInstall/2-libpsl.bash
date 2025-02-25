@@ -2,9 +2,9 @@
 
 mkdir -v libunistring libidn libpsl
 
-tar xf libunistring-*.tar.xz -C valgrind --strip-components=1
-tar xf libidn-*.tar.gz -C valgrind --strip-components=1
-tar xf libpsl-*.tar.gz -C valgrind --strip-components=1
+tar xf libunistring-*.tar.xz -C libunistring --strip-components=1
+tar xf libidn2-*.tar.gz -C libidn --strip-components=1
+tar xf libpsl-*.tar.gz -C libpsl --strip-components=1
 
 cd libunistring
 ./configure --prefix=/usr    \
@@ -21,7 +21,9 @@ make install
 cd ../libpsl
 mkdir build
 cd    build
-meson setup --prefix=/usr --buildtype=release && ninja
+meson setup --prefix=/usr --buildtype=release
+ninja
+ninja install
 
 cd ../..
 rm -rf libunistring libidn libpsl
