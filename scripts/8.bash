@@ -15,7 +15,7 @@ cat /etc/udev/rules.d/70-persistent-net.rules
 
 # General Network Configuration
 ENP=$(ls /sys/class/net | head -n 1)
-ENP_IP=$(ip a show enp0s3 | grep 'inet ' | awk '{print $2}' | cut -d'/' -f1)
+ENP_IP=$(ip a show $ENP | grep 'inet ' | awk '{print $2}' | cut -d'/' -f1)
 ENP_GATEWAY=$(echo $ENP_IP | sed 's/\.[0-9]*$/\.45/')
 ENP_BRODCAST=$(ip a show enp0s3 | grep "inet " | awk '{print $4}' | cut -d'/' -f1)
 
