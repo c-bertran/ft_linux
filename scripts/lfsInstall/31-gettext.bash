@@ -9,6 +9,6 @@ cd gettext
 make
 make check
 make install
-chmod -v 0755 /usr/lib/preloadable_libintl.s
+chmod -v 0755 /usr/lib/preloadable_libintl.so
 cd ..
 rm -rf gettext

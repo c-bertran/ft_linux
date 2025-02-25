@@ -1,5 +1,6 @@
 #!/bin/bash
 
+printf '\033]2;Bash\a'
 mkdir bash
 tar xf bash-*.tar.gz -C bash  --strip-components=1
 cd bash
@@ -9,9 +10,16 @@ cd bash
             bash_cv_strtold_broken=no \
             --docdir=/usr/share/doc/bash-5.2.32
 make
-make install
+chown -R tester .
+su -s /usr/bin/expect tester << "EOF"
+set timeout -1
+spawn make tests
+expect eof
+lassign [wait] _ _ _ value
+exit $value
+EOF
 make install
 cd ..
 rm -rf bash
 
-exec /usr/bin/bash --login
+echo "Execute this command: " "exec /usr/bin/bash --login"

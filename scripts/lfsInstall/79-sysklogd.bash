@@ -11,7 +11,7 @@ make -j$(nproc)
 make install
 
 cat > /etc/syslog.conf << "EOF"
-# Début de /etc/syslog.conf
+# Begin /etc/syslog.conf
 
 auth,authpriv.* -/var/log/auth.log
 *.*;auth,authpriv.none -/var/log/sys.log
@@ -21,10 +21,10 @@ mail.* -/var/log/mail.log
 user.* -/var/log/user.log
 *.emerg *
 
-# Ne pas ouvrir de ports internet.
+# Do not open any internet ports.
 secure_mode 2
 
-# Fin de /etc/syslog.conf
+# End /etc/syslog.conf
 EOF
 
 cd ..

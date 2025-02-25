@@ -6,5 +6,6 @@ for file in `ls -1 $dir | sort -n`; do
         continue
     fi
     echo Install $file
+    printf "\033]2;$file\a"
     bash $dir/$file
 done

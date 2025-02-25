@@ -14,6 +14,7 @@ cd man-db
             --with-systemdtmpfilesdir=            \
             --with-systemdsystemunitdir=
 make -j$(nproc)
+make check
 make install
 cd ..
 rm -rf man-db

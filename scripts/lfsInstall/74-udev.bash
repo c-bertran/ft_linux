@@ -43,7 +43,7 @@ install -vm644 hwdb.d/*  ../hwdb.d/{*.hwdb,README} /usr/lib/udev/hwdb.d/
 install -vm755 $udev_helpers                       /usr/lib/udev
 install -vm644 ../network/99-default.link          /usr/lib/udev/network
 
-tar xf ../../udev-lfs-20230818.tar.xz
+tar -xvf ../../udev-lfs-20230818.tar.xz
 make -f udev-lfs-20230818/Makefile.lfs install
 
 tar -xf ../../systemd-man-pages-256.4.tar.xz                            \

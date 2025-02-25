@@ -14,7 +14,7 @@ done
 ln -sv ../vim/vim91/doc /usr/share/doc/vim-9.1.0660
 
 cat > /etc/vimrc << "EOF"
-" Début de /etc/vimrc
+" Begin /etc/vimrc
 
 " Ensure defaults are set before customizing settings, not after
 source $VIMRUNTIME/defaults.vim
@@ -28,7 +28,7 @@ if (&term == "xterm") || (&term == "putty")
   set background=dark
 endif
 
-" Fin de /etc/vimrc
+" End /etc/vimrc
 EOF
 
 cd ..

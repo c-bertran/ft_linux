@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir expect
-tar xf expect5.45.4.tar.xz -C expect  --strip-components=1
+tar xf expect5.45.4.tar.gz -C expect  --strip-components=1
 cd expect
 patch -Np1 -i ../expect-5.45.4-gcc14-1.patch
 ./configure --prefix=/usr           \
