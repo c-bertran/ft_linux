@@ -17,28 +17,37 @@ cat /etc/udev/rules.d/70-persistent-net.rules
 ENP=$(ls /sys/class/net | head -n 1)
 ENP_IP=$(ip a show $ENP | grep 'inet ' | awk '{print $2}' | cut -d'/' -f1)
 ENP_GATEWAY=$(echo $ENP_IP | sed 's/\.[0-9]*$/\.45/')
-ENP_BRODCAST=$(ip a show enp0s3 | grep "inet " | awk '{print $4}' | cut -d'/' -f1)
+ENP_BROADCAST=$(ip a show enp0s3 | grep "inet " | awk '{print $4}' | cut -d'/' -f1)
 
-cd /etc/sysconfig/
-cat > ifconfig.eth0 << "EOF"
-ONBOOT=yes
-IFACE=eth0
-SERVICE=ipv4-static
-IP=192.168.1.2
-GATEWAY=192.168.1.1
-PREFIX=24
-BROADCAST=192.168.1.255
-EOF
-
-cat > ifconfig.$ENP << EOF
+cat > /etc/sysconfig/ifconfig.eth0 << EOF
 ONBOOT=yes
 IFACE=$ENP
 SERVICE=ipv4-static
 IP=$ENP_IP
 GATEWAY=$ENP_GATEWAY
 PREFIX=24
-BROADCAST=$ENP_BRODCAST
+BROADCAST=$ENP_BROADCAST
 EOF
+
+# cat > ifconfig.eth0 << "EOF"
+# ONBOOT=yes
+# IFACE=eth0
+# SERVICE=ipv4-static
+# IP=192.168.1.2
+# GATEWAY=192.168.1.1
+# PREFIX=24
+# BROADCAST=192.168.1.255
+# EOF
+
+# cat > ifconfig.$ENP << EOF
+# ONBOOT=yes
+# IFACE=$ENP
+# SERVICE=ipv4-static
+# IP=$ENP_IP
+# GATEWAY=$ENP_GATEWAY
+# PREFIX=24
+# BROADCAST=$ENP_BROADCAST
+# EOF
 
 cat > /etc/resolv.conf << "EOF"
 # Begin /etc/resolv.conf
