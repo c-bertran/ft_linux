@@ -19,10 +19,10 @@ cat > /etc/sysconfig/ifconfig.$ENP << EOF
 ONBOOT=yes
 IFACE=$ENP
 SERVICE=ipv4-static
-IP=192.168.0.222
-GATEWAY=192.168.0.1
+IP=192.168.1.2
+GATEWAY=192.168.1.1
 PREFIX=24
-BROADCAST=192.168.0.255
+BROADCAST=192.168.1.255
 EOF
 
 # ENP_IP=$(ip a show $ENP | grep 'inet ' | awk '{print $2}' | cut -d'/' -f1)
