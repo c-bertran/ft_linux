@@ -56,6 +56,16 @@ sudo chroot "$LFS" /usr/bin/env -i   \
     PATH=/usr/bin:/usr/sbin     \
     /bin/bash --login < ./scripts/6.2.bash
 
+echo '>>>>>>' 'Optional installation dumps' '<<<<<<'
+sudo rm -rf $LFS/sources/*.bash
+sudo cp -r ./scripts/optionalInstall/* $LFS/sources
+sudo chroot "$LFS" /usr/bin/env -i   \
+    HOME=/root                  \
+    TERM="$TERM"                \
+    PS1='(lfs chroot) \u:\w\$ ' \
+    PATH=/usr/bin:/usr/sbin     \
+    /bin/bash --login < ./scripts/6.2.bash
+
 echo '>>>>>>' 'Clean dumps' '<<<<<<'
 sudo chroot "$LFS" /usr/bin/env -i   \
     HOME=/root                  \

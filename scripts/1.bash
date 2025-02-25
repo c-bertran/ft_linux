@@ -74,6 +74,11 @@ wget --input-file=wget-list-systemd --continue --directory-prefix=$LFS/sources
 wget --input-file=wget-list-systemd --continue --directory-prefix=$LFS/sources
 wget --input-file=wget-list-systemd --continue --directory-prefix=$LFS/sources
 
+# Optional
+wget --no-check-certificate --input-file=wget-list-systemd-plus --continue --directory-prefix=$LFS/sources
+wget --no-check-certificate --input-file=wget-list-systemd-plus --continue --directory-prefix=$LFS/sources
+wget --no-check-certificate --input-file=wget-list-systemd-plus --continue --directory-prefix=$LFS/sources
+
 chown root:root $LFS/sources/*
 
 # Prepare lfs structure
