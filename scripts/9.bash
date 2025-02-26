@@ -160,10 +160,6 @@ LC_ALL=$LOCALE locale int_prefix
 cat > /etc/profile << EOF
 # Begin /etc/profile
 
-for i in $(locale); do
-  unset ${i%=*}
-done
-
 if [[ "\$TERM" = linux ]]; then
   export LANG=C.UTF-8
 else

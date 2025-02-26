@@ -9,6 +9,7 @@ cd wget
             --with-ssl=openssl
 make
 make install
+ln -sv wget2 /usr/bin/wget
 
 cd ..
 rm -rf wget
