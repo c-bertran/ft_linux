@@ -104,6 +104,8 @@ sudo chroot "$LFS" /usr/bin/env -i   \
     PATH=/usr/bin:/usr/sbin     \
     /bin/bash --login < ./scripts/11.bash
 
+sudo rm -rf $LFS/sources/*.bash
+sudo -u root << EOF
 umount -v $LFS/dev/pts
 mountpoint -q $LFS/dev/shm && umount -v $LFS/dev/shm
 umount -v $LFS/dev
@@ -111,5 +113,5 @@ umount -v $LFS/run
 umount -v $LFS/proc
 umount -v $LFS/sys
 umount -v $LFS
-
 shutdown -r now
+EOF
