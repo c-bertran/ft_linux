@@ -112,6 +112,6 @@ umount -v $LFS/dev
 umount -v $LFS/run
 umount -v $LFS/proc
 umount -v $LFS/sys
-umount -v $LFS
+umount -vl $LFS
 shutdown -r now
 EOF
