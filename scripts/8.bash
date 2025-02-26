@@ -14,9 +14,10 @@ bash /usr/lib/udev/init-net-rules.sh
 cat /etc/udev/rules.d/70-persistent-net.rules
 
 # General Network Configuration
-cat > /etc/sysconfig/ifconfig.eth0 << EOF
+ENP=$(ls /sys/class/net | head -n 1)
+cat > /etc/sysconfig/ifconfig.$ENP << EOF
 ONBOOT=yes
-IFACE=eth0
+IFACE=$ENP
 SERVICE=ipv4-static
 IP=192.168.0.222
 GATEWAY=192.168.0.1
@@ -24,7 +25,6 @@ PREFIX=24
 BROADCAST=192.168.0.255
 EOF
 
-# ENP=$(ls /sys/class/net | head -n 1)
 # ENP_IP=$(ip a show $ENP | grep 'inet ' | awk '{print $2}' | cut -d'/' -f1)
 # ENP_GATEWAY=$(echo $ENP_IP | sed 's/\.[0-9]*$/\.45/')
 # ENP_BROADCAST=$(ip a show enp0s3 | grep "inet " | awk '{print $4}' | cut -d'/' -f1)
